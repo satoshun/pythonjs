@@ -9,7 +9,8 @@
       return (this.match(new RegExp(key, 'g')) || []).length;
     },
     title: function title () {
-      return this.replace(/[a-zA-Z]\S*/g, function (word) {
+      var s = String(this);
+      return s.replace(/[a-zA-Z]\S*/g, function (word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
     },
@@ -27,7 +28,7 @@
       return this.slice(start);
     },
     rstrip: function rstrip (chars) {
-      var len = this.length
+      var len = this.length,
           end = len - 1;
       if (chars === undef) {
         while (end >= 0 && this.charAt(end) === ' ') end--;
@@ -38,7 +39,21 @@
     },
     strip: function strip (chars) {
       return this.lstrip(chars).rstrip(chars);
+    },
+    center: function center (length, char) {
+      var r, l;
+      if (this.length >= length) return this;
+      if (char === undef) char = ' ';
+      length -= this.length;
+      r = l = Math.floor(length / 2);
+      if (this.length % 2 === 0) r += (length % 2);
+      else l += (length % 2);
+      return repeatString(char, r) + this + repeatString(char, l);
     }
   });
+
+  function repeatString(char, length) {
+    return new Array(length + 1).join(char);
+  }
 
 } (this));

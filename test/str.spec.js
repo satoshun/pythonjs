@@ -41,4 +41,12 @@ describe('str prototype test', function () {
     expect('bab'.strip('b')).toEqual('a');
     expect('ababb ababb'.strip('ab')).toEqual(' ');
   });
+
+  it('center', function () {
+    expect('abc'.center(9)).toEqual('   abc   ');
+    expect('abc'.center(8)).toEqual('  abc   ');
+    expect('abcd'.center(7)).toEqual('  abcd ');
+    expect('abc'.center(4, 'd')).toEqual('abcd');
+    expect('abc'.center(7, 'e')).toEqual('eeabcee');
+  });
 });
