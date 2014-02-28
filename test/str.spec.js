@@ -49,4 +49,16 @@ describe('str prototype test', function () {
     expect('abc'.center(4, 'd')).toEqual('abcd');
     expect('abc'.center(7, 'e')).toEqual('eeabcee');
   });
+
+  it('startswith', function () {
+    expect('abc'.startswith('a')).toEqual(true);
+    expect('abc'.startswith('ab')).toEqual(true);
+    expect('abc'.startswith('d')).toEqual(false);
+  });
+
+  it('endswith', function () {
+    expect('abc'.endswith('c')).toEqual(true);
+    expect('abc'.endswith('bc')).toEqual(true);
+    expect('abc'.endswith('d')).toEqual(false);
+  });
 });

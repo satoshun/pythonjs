@@ -49,7 +49,13 @@
       if (this.length % 2 === 0) r += (length % 2);
       else l += (length % 2);
       return repeatString(char, r) + this + repeatString(char, l);
-    }
+    },
+    endswith: function endswith (chars) {
+      return this.slice(this.length - chars.length) === chars;
+    },
+    startswith: function startswith (chars) {
+      return this.slice(0, chars.length) === chars;
+    },
   });
 
   function repeatString(char, length) {
