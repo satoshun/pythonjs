@@ -66,4 +66,29 @@ describe('str prototype test', function () {
     expect('\tabc'.expandtabs(10)).toEqual('          abc');
     expect('ab\tc\t'.expandtabs(3)).toEqual('ab   c   ');
   });
+
+  it('isalnum', function () {
+    expect('abc'.isalnum()).toEqual(true);
+    expect('1abc2'.isalnum()).toEqual(true);
+    expect('1AZabc2'.isalnum()).toEqual(true);
+    expect(' abc'.isalnum()).toEqual(false);
+    expect('abc\n'.isalnum()).toEqual(false);
+  });
+
+  it('isalpha', function () {
+    expect('abc'.isalpha()).toEqual(true);
+    expect('Abc'.isalpha()).toEqual(true);
+    expect('1abc2'.isalpha()).toEqual(false);
+    expect('1AZabc2'.isalpha()).toEqual(false);
+    expect(' abc'.isalpha()).toEqual(false);
+    expect('abc\n'.isalpha()).toEqual(false);
+  });
+
+  it('isdigit', function () {
+    expect('123'.isdigit()).toEqual(true);
+    expect('0123'.isdigit()).toEqual(true);
+    expect('0123a'.isdigit()).toEqual(false);
+    expect('0123 '.isdigit()).toEqual(false);
+    expect('01a23'.isdigit()).toEqual(false);
+  });
 });

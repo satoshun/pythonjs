@@ -61,6 +61,15 @@
       return s.replace(/\s/g, function (tab) {
         return repeatString(' ', length);
       });
+    },
+    isalnum: function isalnum () {
+      return (this.match(/^\w*$/) || [''])[0] === String(this);
+    },
+    isalpha: function isalpha () {
+      return (this.match(/^[a-zA-Z]*$/) || [''])[0] === String(this);
+    },
+    isdigit: function isdigit () {
+      return (this.match(/^\d*$/) || [''])[0] === String(this);
     }
   });
 
