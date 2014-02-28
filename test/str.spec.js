@@ -34,4 +34,11 @@ describe('str prototype test', function () {
     expect('bab'.rstrip('b')).toEqual('ba');
     expect(' ababb'.rstrip('ab')).toEqual(' ');
   });
+
+  it('strip', function () {
+    expect(' a '.strip()).toEqual('a');
+    expect('a '.strip()).toEqual('a');
+    expect('bab'.strip('b')).toEqual('a');
+    expect('ababb ababb'.strip('ab')).toEqual(' ');
+  });
 });

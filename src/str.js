@@ -35,6 +35,9 @@
         while (end >= 0 && chars.indexOf(this[end]) !== -1) end--;
       }
       return this.slice(0, end + 1);
+    },
+    strip: function strip (chars) {
+      return this.lstrip(chars).rstrip(chars);
     }
   });
 
