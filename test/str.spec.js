@@ -61,4 +61,9 @@ describe('str prototype test', function () {
     expect('abc'.endswith('bc')).toEqual(true);
     expect('abc'.endswith('d')).toEqual(false);
   });
+
+  it('expandtabs', function () {
+    expect('\tabc'.expandtabs(10)).toEqual('          abc');
+    expect('ab\tc\t'.expandtabs(3)).toEqual('ab   c   ');
+  });
 });

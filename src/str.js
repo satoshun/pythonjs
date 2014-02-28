@@ -19,17 +19,17 @@
     },
     lstrip: function lstrip (chars) {
       var start = 0,
-          len = this.length;
+          length = this.length;
       if (chars === undef) {
-        while (start < len && this.charAt(start) === ' ') start++;
+        while (start < length && this.charAt(start) === ' ') start++;
       } else {
-        while (start < len && chars.indexOf(this[start]) !== -1) start++;
+        while (start < length && chars.indexOf(this[start]) !== -1) start++;
       }
       return this.slice(start);
     },
     rstrip: function rstrip (chars) {
-      var len = this.length,
-          end = len - 1;
+      var length = this.length,
+          end = length - 1;
       if (chars === undef) {
         while (end >= 0 && this.charAt(end) === ' ') end--;
       } else {
@@ -56,6 +56,12 @@
     startswith: function startswith (chars) {
       return this.slice(0, chars.length) === chars;
     },
+    expandtabs: function expandtabs (length) {
+      var s = String(this);
+      return s.replace(/\s/g, function (tab) {
+        return repeatString(' ', length);
+      });
+    }
   });
 
   function repeatString(char, length) {
