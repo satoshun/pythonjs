@@ -19,4 +19,19 @@ describe('str prototype test', function () {
     expect('BbC'.capitalize()).toEqual('Bbc');
     expect('Bbc bbc'.capitalize()).toEqual('Bbc bbc');
   });
+
+  it('lstrip', function () {
+    expect(' a '.lstrip()).toEqual('a ');
+    expect('a '.lstrip()).toEqual('a ');
+    expect('ba '.lstrip('b')).toEqual('a ');
+    expect('bbaba '.lstrip('b')).toEqual('aba ');
+    expect('ababb '.lstrip('ab')).toEqual(' ');
+  });
+
+  it('rstrip', function () {
+    expect(' a '.rstrip()).toEqual(' a');
+    expect('a '.rstrip()).toEqual('a');
+    expect('bab'.rstrip('b')).toEqual('ba');
+    expect(' ababb'.rstrip('ab')).toEqual(' ');
+  });
 });
