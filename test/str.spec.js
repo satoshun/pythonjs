@@ -13,4 +13,10 @@ describe('str prototype test', function () {
     expect('Bbc bbc'.title()).toEqual('Bbc Bbc');
     expect('1bc ;bc'.title()).toEqual('1Bc ;Bc');
   });
+
+  it('capitalize', function () {
+    expect('aBc'.capitalize()).toEqual('Abc');
+    expect('BbC'.capitalize()).toEqual('Bbc');
+    expect('Bbc bbc'.capitalize()).toEqual('Bbc bbc');
+  });
 });

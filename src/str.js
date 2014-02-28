@@ -12,6 +12,9 @@
       return this.replace(/[a-zA-Z]\S*/g, function (word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
+    },
+    capitalize: function capitalize () {
+      return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
     }
   });
 
