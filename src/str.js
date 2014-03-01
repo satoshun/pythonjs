@@ -79,6 +79,16 @@
     },
     isspace: function isspace () {
       return (this.match(/^\s*$/) || [''])[0] === String(this);
+    },
+    rjust: function rjust (length, char) {
+      if (this.length >= length) return this;
+      if (char === undef) char = ' ';
+      return repeatString(char, length - this.length) + this;
+    },
+    ljust: function ljust (length, char) {
+      if (this.length >= length) return this;
+      if (char === undef) char = ' ';
+      return this + repeatString(char, length - this.length);
     }
   });
 

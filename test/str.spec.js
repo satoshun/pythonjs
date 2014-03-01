@@ -114,4 +114,18 @@ describe('str prototype test', function () {
     expect(' a'.isspace()).toEqual(false);
     expect(' 1 '.isspace()).toEqual(false);
   });
+
+  it('rjust', function () {
+    expect('abc'.rjust(5)).toEqual('  abc');
+    expect(' abc'.rjust(5)).toEqual('  abc');
+    expect('abc'.rjust(5, 'd')).toEqual('ddabc');
+    expect('abc '.rjust(5, 'd')).toEqual('dabc ');
+  });
+
+  it('ljust', function () {
+    expect('abc'.ljust(5)).toEqual('abc  ');
+    expect('abc '.ljust(5)).toEqual('abc  ');
+    expect('abc'.ljust(5, 'd')).toEqual('abcdd');
+    expect('abc '.ljust(5, 'd')).toEqual('abc d');
+  });
 });
