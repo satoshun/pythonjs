@@ -147,6 +147,15 @@ describe('str prototype test', function () {
     expect('bas'.lsplit('\n', 10)).toEqual(['bas']);
   });
 
+  it('splitlines', function () {
+    expect('abc\nhoge'.splitlines()).toEqual(['abc', 'hoge']);
+    expect('abc\nhoge\n'.splitlines()).toEqual(['abc', 'hoge']);
+    expect('\nabc\nhoge\n'.splitlines()).toEqual(['', 'abc', 'hoge']);
+
+    expect('abc\nhoge'.splitlines(true)).toEqual(['abc\n', 'hoge']);
+    expect('abc\nhoge\n'.splitlines(true)).toEqual(['abc\n', 'hoge\n']);
+  });
+
   it('format', function () {
     expect('{}'.format('hogehoge')).toEqual('hogehoge');
     expect('{} {}'.format('hogehoge', 'gaa')).toEqual('hogehoge gaa');

@@ -116,6 +116,16 @@
       }
       return words.slice(start, end);
     },
+    splitlines: function splitlines (keepend) {
+      var words = this.split('\n');
+      if (keepend) {
+        for (var i = 0, l = words.length - 1; i < l; i++) {
+          words[i] += '\n';
+        }
+      }
+
+      return words[words.length - 1] === '' || words[words.length - 1] === '\n' ? words.slice(0, words.length - 1) : words;
+    },
     format: function format () {
       var s = String(this),
           values = Array.prototype.slice.call(arguments),
