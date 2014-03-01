@@ -91,4 +91,27 @@ describe('str prototype test', function () {
     expect('0123 '.isdigit()).toEqual(false);
     expect('01a23'.isdigit()).toEqual(false);
   });
+
+  it('islower', function () {
+    expect('abc'.islower()).toEqual(true);
+    expect('abcde'.islower()).toEqual(true);
+    expect('Abc'.islower()).toEqual(false);
+    expect('ab '.islower()).toEqual(false);
+    expect('a1bc'.islower()).toEqual(false);
+  });
+
+  it('isupper', function () {
+    expect('ABC'.isupper()).toEqual(true);
+    expect('ABCDE'.isupper()).toEqual(true);
+    expect('ABc'.isupper()).toEqual(false);
+    expect('AB '.isupper()).toEqual(false);
+    expect('A1BC'.isupper()).toEqual(false);
+  });
+
+  it('isspace', function () {
+    expect(' '.isspace()).toEqual(true);
+    expect('  '.isspace()).toEqual(true);
+    expect(' a'.isspace()).toEqual(false);
+    expect(' 1 '.isspace()).toEqual(false);
+  });
 });

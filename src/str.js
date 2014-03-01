@@ -70,6 +70,15 @@
     },
     isdigit: function isdigit () {
       return (this.match(/^\d*$/) || [''])[0] === String(this);
+    },
+    islower: function islower () {
+      return (this.match(/^[a-z]*$/) || [''])[0] === String(this);
+    },
+    isupper: function isupper () {
+      return (this.match(/^[A-Z]*$/) || [''])[0] === String(this);
+    },
+    isspace: function isspace () {
+      return (this.match(/^\s*$/) || [''])[0] === String(this);
     }
   });
 
