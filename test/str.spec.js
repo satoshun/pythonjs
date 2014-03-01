@@ -164,4 +164,10 @@ describe('str prototype test', function () {
     expect('{0} {hoge} {1}'.format('gaa', 'nii', {hoge: 'hoge'})).toEqual('gaa hoge nii');
     expect('{0} {hoge} {1} {huga}'.format('gaa', 'nii', {hoge: 'hoge', 'huga': 'huga'})).toEqual('gaa hoge nii huga');
   });
+
+  it('zfill', function () {
+    expect('hoge'.zfill(10)).toEqual('000000hoge');
+    expect('hoge'.zfill(3)).toEqual('hoge');
+    expect('0a'.zfill(4)).toEqual('000a');
+  });
 });

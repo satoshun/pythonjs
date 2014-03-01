@@ -138,6 +138,9 @@
       }
 
       return s;
+    },
+    zfill: function zfill (length) {
+      return this.rjust(length, '0');
     }
   });
 
