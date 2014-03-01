@@ -128,4 +128,22 @@ describe('str prototype test', function () {
     expect('abc'.ljust(5, 'd')).toEqual('abcdd');
     expect('abc '.ljust(5, 'd')).toEqual('abc d');
   });
+
+  it('rsplit', function () {
+    expect('abc\nhoge'.rsplit('\n', 1)).toEqual(['abc', 'hoge']);
+    expect('hoge\nabc\nhoge'.rsplit()).toEqual(['hoge', 'abc', 'hoge']);
+    expect('hoge\nabc\nhoge'.rsplit('\n', 1)).toEqual(['hoge\nabc', 'hoge']);
+    expect('hogea\nhoge\nabc\nhoge'.rsplit('\n', 2)).toEqual(['hogea\nhoge', 'abc', 'hoge']);
+    expect(''.rsplit('\n', 10)).toEqual(['']);
+    expect('bas'.rsplit('\n', 10)).toEqual(['bas']);
+  });
+
+  it('lsplit', function () {
+    expect('abc\nhoge'.lsplit('\n', 1)).toEqual(['abc', 'hoge']);
+    expect('hoge\nabc\nhoge'.lsplit()).toEqual(['hoge', 'abc', 'hoge']);
+    expect('hoge\nabc\nhoge'.lsplit('\n', 1)).toEqual(['hoge', 'abc\nhoge']);
+    expect('hogea\nhoge\nabc\nhoge'.lsplit('\n', 2)).toEqual(['hogea', 'hoge', 'abc\nhoge']);
+    expect(''.lsplit('\n', 10)).toEqual(['']);
+    expect('bas'.lsplit('\n', 10)).toEqual(['bas']);
+  });
 });

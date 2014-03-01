@@ -89,6 +89,32 @@
       if (this.length >= length) return this;
       if (char === undef) char = ' ';
       return this + repeatString(char, length - this.length);
+    },
+    rsplit: function rsplit (char, num) {
+      var words, start = 0, end;
+      if (char === undef) char = '\n';
+      words = this.split(char);
+      if (num === undef || num >= words.length - 1) return words;
+
+      end = words.length;
+      num = end - num - 1;
+      for (; num > start && end > start; start++) {
+        words[start + 1] = words[start] + char + words[start + 1];
+      }
+      return words.slice(start, end);
+    },
+    lsplit: function lsplit (char, num) {
+      var words, start = 0, end, length;
+      if (char === undef) char = '\n';
+      words = this.split(char);
+      if (num === undef || num >= words.length - 1) return words;
+
+      end = length = words.length;
+      num = length - num - 1;
+      for (; num > (length - end) && end > start; end--) {
+        words[end - 2] = words[end - 2] + char + words[end - 1];
+      }
+      return words.slice(start, end);
     }
   });
 
