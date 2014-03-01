@@ -115,6 +115,29 @@
         words[end - 2] = words[end - 2] + char + words[end - 1];
       }
       return words.slice(start, end);
+    },
+    format: function format () {
+      var s = String(this),
+          values = Array.prototype.slice.call(arguments),
+          value, length = values.length, i = 0, index = 0,
+          indexFlag = !!(this.match(/\{0\}/));
+
+      for (; i < length; i++) {
+        value = values[i];
+        if (typeof value === 'string') {
+          if (indexFlag) s = s.split('{' + index + '}').join(value);
+          else s = s.replace('{}', value);
+          index++;
+        } else {
+          for (var key in value) {
+            if (value.hasOwnProperty(key)) {
+              s = s.split('{' + key + '}').join(value[key]);
+            }
+          }
+        }
+      }
+
+      return s;
     }
   });
 

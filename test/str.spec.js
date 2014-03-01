@@ -146,4 +146,22 @@ describe('str prototype test', function () {
     expect(''.lsplit('\n', 10)).toEqual(['']);
     expect('bas'.lsplit('\n', 10)).toEqual(['bas']);
   });
+
+  it('format', function () {
+    expect('{}'.format('hogehoge')).toEqual('hogehoge');
+    expect('{} {}'.format('hogehoge', 'gaa')).toEqual('hogehoge gaa');
+
+    expect('{hoge}'.format({hoge: 'gaa'})).toEqual('gaa');
+    expect('{hoge} {hoge}'.format({hoge: 'gaa'})).toEqual('gaa gaa');
+    expect('{hoge} {huga} {hoge}'.format({hoge: 'gaa', huga: 'bbd'})).toEqual('gaa bbd gaa');
+
+    expect('{0}'.format('gaa')).toEqual('gaa');
+    expect('{0} {0}'.format('gaa')).toEqual('gaa gaa');
+    expect('{0} {1} {0}'.format('gaa', 'duu')).toEqual('gaa duu gaa');
+    expect('{0} {3} {1} {0} {2}'.format('gaa', 'duu', 'buu', 'ccc')).toEqual('gaa ccc duu gaa buu');
+
+    expect('{0} {hoge}'.format('gaa', {hoge: 'hoge'})).toEqual('gaa hoge');
+    expect('{0} {hoge} {1}'.format('gaa', 'nii', {hoge: 'hoge'})).toEqual('gaa hoge nii');
+    expect('{0} {hoge} {1} {huga}'.format('gaa', 'nii', {hoge: 'hoge', 'huga': 'huga'})).toEqual('gaa hoge nii huga');
+  });
 });
