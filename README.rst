@@ -1,4 +1,4 @@
-compat_py (python like function for javascript)
+pythonjs (python like function for javascript)
 ===============================================
 
 This is JavaScript like Python.

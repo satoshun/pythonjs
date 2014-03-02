@@ -1,24 +1,24 @@
 {
-  "name": "compat_py",
+  "name": "pythonjs",
   "version": "0.0.2",
   "description": "python like function for javascript",
-  "main": "compat_py.min.js",
+  "main": "pythonjs.min.js",
   "directories": {
     "test": "test"
   },
   "keywords": [
     "javascript",
     "python",
-    "compatible"
+    "pythonjs"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/satoshun/compat_py.git"
+    "url": "git://github.com/satoshun/pythonjs.git"
   },
   "author": "SatoShun <shun.sato1@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/satoshun/compat_py/issues"
+    "url": "https://github.com/satoshun/pythonjs/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

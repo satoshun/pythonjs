@@ -25,13 +25,13 @@ module.exports = function(grunt) {
         src: [
           '<%= project.app %>/*.js'
         ],
-        dest: 'compat_py.js'
+        dest: 'pythonjs.js'
       }
     },
     uglify: {
       dist: {
         files: {
-          'compat_py.min.js': ['compat_py.js']
+          'pythonjs.min.js': ['pythonjs.js']
         }
       }
     }
