@@ -1,4 +1,8 @@
 describe('collections spec test', function () {
+  beforeEach(function () {
+    pymoudle.Import('collections');
+  });
+
   it('initialize spec', function () {
     var c = new collections.Counter({a: 10, b: 20});
     expect(c.a).toEqual(10);
