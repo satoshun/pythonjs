@@ -1,0 +1,21 @@
+{
+  "name": "compat_py",
+  "version": "0.0.1",
+  "main": "compat_py.min.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "test",
+    "*.rst",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "devDependencies": {
+    "underscore": "1.6.0"
+  },
+  "keywords": [
+    "javascript",
+    "python",
+    "compatible"
+  ]
+}

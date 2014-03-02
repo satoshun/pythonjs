@@ -1,7 +1,7 @@
 {
   "name": "compat_py",
-  "version": "0.0.0",
-  "description": "compat_py =========",
+  "version": "0.0.1",
+  "description": "python like function for javascript",
   "main": "Gruntfile.js",
   "directories": {
     "test": "test"
