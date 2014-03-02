@@ -1,6 +1,6 @@
 {
   "name": "pythonjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "pythonjs.min.js",
   "description": "python like function for javascript",
   "license": "MIT",
