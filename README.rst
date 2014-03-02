@@ -20,6 +20,19 @@ count, remove, extend
 standard library
 ----------------
 
+need import.
+
+::
+
+  pymodule.Import('collections');
+  new collections.Counter();
+
+  or
+
+  var package = {};
+  pymodule.Import('collections', package);
+  new package.collections.Counter();
+
 collections
 ~~~~~~~~~~~
 
