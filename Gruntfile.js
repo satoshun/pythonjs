@@ -19,10 +19,30 @@ module.exports = function(grunt) {
         configFile: '<%= project.test %>/config.js',
         singleRun: true
       }
+    },
+    concat: {
+      dist: {
+        src: [
+          '<%= project.app %>/*.js'
+        ],
+        dest: 'compat_py.js'
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'compat_py.min.js': ['compat_py.js']
+        }
+      }
     }
   });
 
   grunt.registerTask('test', [
     'karma:build'
+  ]);
+
+  grunt.registerTask('build', [
+    'concat:dist',
+    'uglify:dist'
   ]);
 };
