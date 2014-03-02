@@ -17,4 +17,12 @@ describe('array prototype test', function () {
     a.remove('100');
     expect(a).toEqual(['a', 100, 'a', 'bb', 'hoge']);
   });
+
+  it('extend', function () {
+    var a = ['a'];
+    a.extend(['b', 'c']);
+    expect(a).toEqual(['a', 'b', 'c']);
+    a.extend([1, 2, 3]);
+    expect(a).toEqual(['a', 'b', 'c', 1, 2, 3]);
+  });
 });

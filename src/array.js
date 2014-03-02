@@ -32,6 +32,9 @@
     remove: function remove (value) {
       var index = this.indexOf(value);
       if (index !== -1) this.splice(index, 1);
+    },
+    extend: function extend (target) {
+      this.push.apply(this, target);
     }
   });
 } (this));
