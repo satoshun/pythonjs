@@ -28,6 +28,10 @@
       return this.filter(function (v) {
         return v === value;
       }).length;
+    },
+    remove: function remove (value) {
+      var index = this.indexOf(value);
+      if (index !== -1) this.splice(index, 1);
     }
   });
 } (this));
