@@ -3,10 +3,10 @@
 
   var slice = Array.prototype.slice,
       undef = void 0;
-  root.pymoudle.collections = function () {
-    root.collections = root.collections || {};
+  root.pymoudle.collections = function (scope) {
+    scope.collections = scope.collections || {};
 
-    root.collections.Counter = function Counter () {
+    scope.collections.Counter = function Counter () {
       var kwargs = slice.call(arguments),
           tmp = {};
       this.items = [];
@@ -22,7 +22,7 @@
       setOwnProperty(this, tmp, this.items);
     };
 
-    root.collections.Counter.prototype = {
+    scope.collections.Counter.prototype = {
       mostCommon: function mostCommon (n) {
         var items = this.items.sort(function (a, b) {
           return a[1] <= b[1];
