@@ -1,16 +1,21 @@
 {
   "name": "compat_py",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "python like function for javascript",
-  "main": "Gruntfile.js",
+  "main": "compat_py.min.js",
   "directories": {
     "test": "test"
   },
+  "keywords": [
+    "javascript",
+    "python",
+    "compatible"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/satoshun/compat_py.git"
   },
-  "author": "SatoShun",
+  "author": "SatoShun <shun.sato1@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/satoshun/compat_py/issues"

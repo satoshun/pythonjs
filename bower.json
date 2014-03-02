@@ -1,6 +1,6 @@
 {
   "name": "compat_py",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "compat_py.min.js",
   "description": "python like function for javascript",
   "license": "MIT",
