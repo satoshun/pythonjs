@@ -1,11 +1,11 @@
 pythonjs (python like function for javascript)
-===============================================
+==============================================
 
 This is JavaScript like Python.
 String, Array object extend to a python functions.
 
-extend
-------
+implement methods
+-----------------
 
 String
 ~~~~~~
