@@ -35,6 +35,9 @@
     },
     extend: function extend(target) {
       this.push.apply(this, target);
+    },
+    copy: function copy() {
+      return _.clone(this);
     }
   });
 } (this));

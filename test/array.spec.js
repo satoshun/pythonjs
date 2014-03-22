@@ -25,4 +25,11 @@ describe('array prototype test', function () {
     a.extend([1, 2, 3]);
     expect(a).toEqual(['a', 'b', 'c', 1, 2, 3]);
   });
+
+  it('copy', function () {
+    var a = ['a', 'b'],
+        b = a.copy();
+    expect(a).toEqual(b);
+    expect(a).not.toBe(b);
+  });
 });
