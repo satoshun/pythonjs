@@ -4,7 +4,7 @@
     undef = void 0;
 
   if (root.Array.prototype.filter === undef) {
-    Array.prototype.filter = function(fun) {
+    Array.prototype.filter = function (fun) {
       if (this === undef || this === null) throw new TypeError();
 
       var t = Object(this);
@@ -24,16 +24,16 @@
   }
 
   _.extend(root.Array.prototype, {
-    count: function count (value) {
+    count: function count(value) {
       return this.filter(function (v) {
         return v === value;
       }).length;
     },
-    remove: function remove (value) {
+    remove: function remove(value) {
       var index = this.indexOf(value);
       if (index !== -1) this.splice(index, 1);
     },
-    extend: function extend (target) {
+    extend: function extend(target) {
       this.push.apply(this, target);
     }
   });
@@ -46,7 +46,7 @@
     undef = void 0;
 
   _.extend(root.pymoudle, {
-    Import: function Import (path, scope) {
+    Import: function Import(path, scope) {
       if (scope === undef) scope = root;
       root.pymoudle[path](scope);
     },
@@ -56,12 +56,14 @@
 (function (root) {
   root.pymoudle = root.pymoudle || {};
 
-  var slice = Array.prototype.slice,
-      undef = void 0;
+  var
+    slice = Array.prototype.slice,
+    undef = void 0;
+
   root.pymoudle.collections = function (scope) {
     scope.collections = scope.collections || {};
 
-    scope.collections.Counter = function Counter () {
+    scope.collections.Counter = function Counter() {
       var kwargs = slice.call(arguments),
           tmp = {};
       this.items = [];
@@ -78,7 +80,7 @@
     };
 
     scope.collections.Counter.prototype = {
-      mostCommon: function mostCommon (n) {
+      mostCommon: function mostCommon(n) {
         var items = this.items.sort(function (a, b) {
           return a[1] <= b[1];
         });
@@ -87,7 +89,7 @@
       }
     };
 
-    function setOwnProperty (src, dict, store) {
+    function setOwnProperty(src, dict, store) {
       for (var key in dict) {
         if (dict.hasOwnProperty(key)) {
           if (src[key] === undef) {

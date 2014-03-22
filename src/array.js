@@ -4,7 +4,7 @@
     undef = void 0;
 
   if (root.Array.prototype.filter === undef) {
-    Array.prototype.filter = function(fun) {
+    Array.prototype.filter = function (fun) {
       if (this === undef || this === null) throw new TypeError();
 
       var t = Object(this);
@@ -24,16 +24,16 @@
   }
 
   _.extend(root.Array.prototype, {
-    count: function count (value) {
+    count: function count(value) {
       return this.filter(function (v) {
         return v === value;
       }).length;
     },
-    remove: function remove (value) {
+    remove: function remove(value) {
       var index = this.indexOf(value);
       if (index !== -1) this.splice(index, 1);
     },
-    extend: function extend (target) {
+    extend: function extend(target) {
       this.push.apply(this, target);
     }
   });
