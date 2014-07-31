@@ -1,4 +1,5 @@
 (function (root) {
+  'use strict';
   var
     _ = root._,
     undef = void 0;
@@ -9,7 +10,7 @@
 
       var t = Object(this);
       var len = t.length >>> 0;
-      if (typeof fun != "function") throw new TypeError();
+      if (typeof fun != 'function') throw new TypeError();
 
       var res = [],
           thisArg = arguments.length >= 2 ? arguments[1] : undef;
@@ -43,10 +44,12 @@
 } (this));
 
 (function (root) {
+  'use strict';
   root.pymoudle = root.pymoudle || {};
 
   var
-    undef = void 0;
+    undef = void 0,
+    _ = root._;
 
   _.extend(root.pymoudle, {
     Import: function Import(path, scope) {
@@ -119,6 +122,7 @@
 } (this));
 
 (function (root) {
+  'use strict';
   var
     _ = root._,
     undef = void 0;
@@ -178,7 +182,7 @@
     },
     expandtabs: function expandtabs(length) {
       var s = String(this);
-      return s.replace(/\s/g, function (tab) {
+      return s.replace(/\s/g, function () {
         return repeatString(' ', length);
       });
     },

@@ -1,4 +1,5 @@
 (function (root) {
+  'use strict';
   var
     _ = root._,
     undef = void 0;
@@ -58,7 +59,7 @@
     },
     expandtabs: function expandtabs(length) {
       var s = String(this);
-      return s.replace(/\s/g, function (tab) {
+      return s.replace(/\s/g, function () {
         return repeatString(' ', length);
       });
     },

@@ -17,26 +17,16 @@ Array
 
 count, remove, extend
 
-standard library
-----------------
 
-need import.
+development
+-----------
 
-::
+```
+$ npm install
+$ npm test  # test
+$ npm build # update python.js 
+```
 
-  pymodule.Import('collections');
-  new collections.Counter();
-
-  or
-
-  var package = {};
-  pymodule.Import('collections', package);
-  new package.collections.Counter();
-
-collections
-~~~~~~~~~~~
-
-Counter
 
 License
 -------
