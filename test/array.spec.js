@@ -1,12 +1,12 @@
-describe('array prototype test', function () {
-  it('count', function () {
+describe('array prototype test', function() {
+  it('count', function() {
     var a = ['a', 100, 'a', 'bb', 'hoge'];
     expect(a.count('a')).toEqual(2);
     expect(a.count('h')).toEqual(0);
     expect(a.count('hoge')).toEqual(1);
   });
 
-  it('remove', function () {
+  it('remove', function() {
     var a = ['a', 100, 'a', 'bb', 'hoge'];
     a.remove('a');
     expect(a).toEqual([100, 'a', 'bb', 'hoge']);
@@ -18,7 +18,7 @@ describe('array prototype test', function () {
     expect(a).toEqual(['a', 100, 'a', 'bb', 'hoge']);
   });
 
-  it('extend', function () {
+  it('extend', function() {
     var a = ['a'];
     a.extend(['b', 'c']);
     expect(a).toEqual(['a', 'b', 'c']);
@@ -26,7 +26,7 @@ describe('array prototype test', function () {
     expect(a).toEqual(['a', 'b', 'c', 1, 2, 3]);
   });
 
-  it('copy', function () {
+  it('copy', function() {
     var a = ['a', 'b'],
         b = a.copy();
     expect(a).toEqual(b);
