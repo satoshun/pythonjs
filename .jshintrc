@@ -1,0 +1,13 @@
+{
+  "indent": 2,
+  "browser": true,
+  "node": true,
+  "undef": true,
+  "unused": true,
+  "predef": [
+    "require",
+    "define",
+    "module",
+    "_"
+  ]
+}

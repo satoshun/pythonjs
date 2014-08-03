@@ -1,7 +1,6 @@
-(function (root) {
+(function(root) {
   'use strict';
   var
-    _ = root._,
     undef = void 0;
 
   _.extend(root.String.prototype, {
@@ -11,7 +10,7 @@
     },
     title: function title() {
       var s = String(this);
-      return s.replace(/[a-zA-Z]\S*/g, function (word) {
+      return s.replace(/[a-zA-Z]\S*/g, function(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
     },

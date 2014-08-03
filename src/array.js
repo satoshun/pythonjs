@@ -1,11 +1,10 @@
-(function (root) {
+(function(root) {
   'use strict';
   var
-    _ = root._,
     undef = void 0;
 
   if (root.Array.prototype.filter === undef) {
-    Array.prototype.filter = function (fun) {
+    root.Array.prototype.filter = function(fun) {
       if (this === undef || this === null) throw new TypeError();
 
       var t = Object(this);
@@ -26,7 +25,7 @@
 
   _.extend(root.Array.prototype, {
     count: function count(value) {
-      return this.filter(function (v) {
+      return this.filter(function(v) {
         return v === value;
       }).length;
     },
