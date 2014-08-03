@@ -18,6 +18,14 @@ Array
 count, remove, extend
 
 
+builtin
+~~~~~~~
+
+set py to window object.
+
+abs, all, any, bool, callable, chr, dir, getattr, globals, hasattr, isinstance, min, max, range.
+
+
 development
 -----------
 
