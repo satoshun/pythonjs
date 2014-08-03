@@ -51,6 +51,12 @@
     isinstance: function(obj, classinfo) {
       return obj instanceof classinfo;
     },
+    max: function(iterable) {
+      return Math.max.apply(null, iterable);
+    },
+    min: function(iterable) {
+      return Math.min.apply(null, iterable);
+    },
     range: _.range
   });
 }(this));

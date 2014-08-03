@@ -102,6 +102,16 @@ describe('global builtin test', function() {
     expect(false).toEqual(py.isinstance(a, B));
   });
 
+  it('max', function() {
+    expect(10).toEqual(py.max([1, 10, 3]));
+    expect(-1).toEqual(py.max([-1, -100, -3]));
+  });
+
+  it('min', function() {
+    expect(1).toEqual(py.min([1, 10, 3]));
+    expect(-100).toEqual(py.min([-1, -100, -3]));
+  });
+
   it('range', function() {
     expect([0, 1, 2, 3]).toEqual(py.range(4));
   });
