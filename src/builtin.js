@@ -10,6 +10,13 @@
         if (!iterable[i]) return false;
       }
       return true;
+    },
+    any: function any(iterable) {
+      var i = 0, len = iterable.length;
+      for (; i < len; i++) {
+        if (iterable[i]) return true;
+      }
+      return false;
     }
   });
 }(this));
