@@ -101,4 +101,8 @@ describe('global builtin test', function() {
     expect(true).toEqual(py.isinstance(a, A));
     expect(false).toEqual(py.isinstance(a, B));
   });
+
+  it('range', function() {
+    expect([0, 1, 2, 3]).toEqual(py.range(4));
+  });
 });

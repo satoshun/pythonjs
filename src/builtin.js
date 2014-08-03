@@ -50,6 +50,7 @@
     },
     isinstance: function(obj, classinfo) {
       return obj instanceof classinfo;
-    }
+    },
+    range: _.range
   });
 }(this));
