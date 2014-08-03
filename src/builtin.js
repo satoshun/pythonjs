@@ -47,6 +47,9 @@
     },
     hasattr: function(obj, key) {
       return hasOwnProperty.call(obj, key) || !!obj[key];
+    },
+    isinstance: function(obj, classinfo) {
+      return obj instanceof classinfo;
     }
   });
 }(this));

@@ -93,4 +93,12 @@ describe('global builtin test', function() {
     expect(true).toEqual(py.hasattr(a, 'b'));
     expect(false).toEqual(py.hasattr(a, 'c'));
   });
+
+  it('isinstance', function() {
+    var A = function() {};
+    var B = function() {};
+    var a = new A();
+    expect(true).toEqual(py.isinstance(a, A));
+    expect(false).toEqual(py.isinstance(a, B));
+  });
 });
