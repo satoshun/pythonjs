@@ -1,19 +1,16 @@
-(function (root) {
+(function(root, undefined) {
   'use strict';
-  var
-    _ = root._,
-    undef = void 0;
 
-  if (root.Array.prototype.filter === undef) {
-    Array.prototype.filter = function (fun) {
-      if (this === undef || this === null) throw new TypeError();
+  if (root.Array.prototype.filter === undefined) {
+    root.Array.prototype.filter = function(fun) {
+      if (this === undefined || this === null) throw new TypeError();
 
       var t = Object(this);
       var len = t.length >>> 0;
       if (typeof fun != 'function') throw new TypeError();
 
       var res = [],
-          thisArg = arguments.length >= 2 ? arguments[1] : undef;
+          thisArg = arguments.length >= 2 ? arguments[1] : undefined;
       for (var i = 0; i < len; i++) {
         if (i in t) {
           var val = t[i];
@@ -26,7 +23,7 @@
 
   _.extend(root.Array.prototype, {
     count: function count(value) {
-      return this.filter(function (v) {
+      return this.filter(function(v) {
         return v === value;
       }).length;
     },
@@ -58,6 +55,69 @@
     },
   });
 } (this));
+
+(function(root, undefined) {
+  'use strict';
+
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+  root.py = root.py || {};
+  _.extend(root.py, {
+    abs: Math.abs,
+    all: function all(iterable) {
+      var i = 0, len = iterable.length;
+      for (; i < len; i++) {
+        if (!iterable[i]) return false;
+      }
+      return true;
+    },
+    any: function any(iterable) {
+      var i = 0, len = iterable.length;
+      for (; i < len; i++) {
+        if (iterable[i]) return true;
+      }
+      return false;
+    },
+    bool: function(x) {
+      return !!x;
+    },
+    callable: function(x) {
+      return typeof x === 'function';
+    },
+    chr: String.fromCharCode,
+    dir: function dir(obj) {
+      var props = [];
+      for (var key in obj) {
+        props.push(key);
+      }
+      return props;
+    },
+    getattr: function(obj, key, defaultValue) {
+      if (hasOwnProperty.call(obj, key)) return obj[key];
+      return obj[key] || defaultValue;
+    },
+    globals: function() {
+      var props = [];
+      for (var key in root) {
+        if (hasOwnProperty.call(root, key)) props.push(key);
+      }
+      return props;
+    },
+    hasattr: function(obj, key) {
+      return hasOwnProperty.call(obj, key) || !!obj[key];
+    },
+    isinstance: function(obj, classinfo) {
+      return obj instanceof classinfo;
+    },
+    max: function(iterable) {
+      return Math.max.apply(null, iterable);
+    },
+    min: function(iterable) {
+      return Math.min.apply(null, iterable);
+    },
+    range: _.range
+  });
+}(this));
 
 (function (root) {
   root.pymoudle = root.pymoudle || {};
@@ -121,20 +181,17 @@
 
 } (this));
 
-(function (root) {
+(function(root, undefined) {
   'use strict';
-  var
-    _ = root._,
-    undef = void 0;
 
   _.extend(root.String.prototype, {
     count: function count(key) {
-      if (key === undef) return 0;
+      if (key === undefined) return 0;
       return (this.match(new RegExp(key, 'g')) || []).length;
     },
     title: function title() {
       var s = String(this);
-      return s.replace(/[a-zA-Z]\S*/g, function (word) {
+      return s.replace(/[a-zA-Z]\S*/g, function(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       });
     },
@@ -144,7 +201,7 @@
     lstrip: function lstrip(chars) {
       var start = 0,
           length = this.length;
-      if (chars === undef) {
+      if (chars === undefined) {
         while (start < length && this.charAt(start) === ' ') start++;
       } else {
         while (start < length && chars.indexOf(this[start]) !== -1) start++;
@@ -154,7 +211,7 @@
     rstrip: function rstrip(chars) {
       var length = this.length,
           end = length - 1;
-      if (chars === undef) {
+      if (chars === undefined) {
         while (end >= 0 && this.charAt(end) === ' ') end--;
       } else {
         while (end >= 0 && chars.indexOf(this[end]) !== -1) end--;
@@ -167,7 +224,7 @@
     center: function center(length, char) {
       var r, l;
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       length -= this.length;
       r = l = Math.floor(length / 2);
       if (this.length % 2 === 0) r += (length % 2);
@@ -206,19 +263,19 @@
     },
     rjust: function rjust(length, char) {
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       return repeatString(char, length - this.length) + this;
     },
     ljust: function ljust(length, char) {
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       return this + repeatString(char, length - this.length);
     },
     rsplit: function rsplit(char, num) {
       var words, start = 0, end;
-      if (char === undef) char = '\n';
+      if (char === undefined) char = '\n';
       words = this.split(char);
-      if (num === undef || num >= words.length - 1) return words;
+      if (num === undefined || num >= words.length - 1) return words;
 
       end = words.length;
       num = end - num - 1;
@@ -229,9 +286,9 @@
     },
     lsplit: function lsplit(char, num) {
       var words, start = 0, end, length;
-      if (char === undef) char = '\n';
+      if (char === undefined) char = '\n';
       words = this.split(char);
-      if (num === undef || num >= words.length - 1) return words;
+      if (num === undefined || num >= words.length - 1) return words;
 
       end = length = words.length;
       num = length - num - 1;

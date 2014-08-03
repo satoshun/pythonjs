@@ -1,6 +1,6 @@
 {
   "name": "pythonjs",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "python like function for javascript",
   "main": "pythonjs.min.js",
   "directories": {
