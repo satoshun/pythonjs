@@ -76,4 +76,15 @@ describe('global builtin test', function() {
     expect(undefined).toEqual(py.getattr(a, 'b', 100));
     expect(100).toEqual(py.getattr(a, 'c', 100));
   });
+
+  it('hasattr', function() {
+    var A = function() {
+      this.a = 100;
+      this.b = undefined;
+    };
+    var a = new A();
+    expect(true).toEqual(py.hasattr(a, 'a'));
+    expect(true).toEqual(py.hasattr(a, 'b'));
+    expect(false).toEqual(py.hasattr(a, 'c'));
+  });
 });

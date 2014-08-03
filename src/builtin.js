@@ -36,7 +36,10 @@
     },
     getattr: function(obj, key, defaultValue) {
       if (hasOwnProperty.call(obj, key)) return obj[key];
-      return defaultValue;
+      return obj[key] || defaultValue;
+    },
+    hasattr: function(obj, key) {
+      return hasOwnProperty.call(obj, key) || !!obj[key];
     }
   });
 }(this));
