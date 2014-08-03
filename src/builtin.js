@@ -20,6 +20,9 @@
     },
     bool: function(x) {
       return !!x;
+    },
+    callable: function(x) {
+      return typeof x === 'function';
     }
   });
 }(this));

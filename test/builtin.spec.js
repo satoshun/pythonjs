@@ -16,7 +16,7 @@ describe('global builtin test', function() {
     expect(false).toEqual(py.all([1, 4, 0]));
     expect(false).toEqual(py.all([false, true, true, false]));
   });
-  
+
   it('any', function() {
     expect(true).toEqual(py.any([1,0]));
     expect(true).toEqual(py.any([false, 1]));
@@ -29,5 +29,20 @@ describe('global builtin test', function() {
   it('bool', function() {
     expect(true).toEqual(py.bool(1));
     expect(false).toEqual(py.bool(0));
+  });
+
+  it('callable', function() {
+    expect(true).toEqual(py.callable(function() {}));
+    var a = function() {};
+    expect(true).toEqual(py.callable(a));
+    a.func = function() {
+
+    };
+    expect(true).toEqual(py.callable(a.func));
+
+    a.hoge = 100;
+    expect(false).toEqual(py.callable(a.hoge));
+    expect(false).toEqual(py.callable(1));
+    expect(false).toEqual(py.callable(true));
   });
 });
