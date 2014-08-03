@@ -77,6 +77,12 @@ describe('global builtin test', function() {
     expect(100).toEqual(py.getattr(a, 'c', 100));
   });
 
+  it('globals', function() {
+    expect(py.globals()).toContain('document');
+    expect(py.globals()).toContain('window');
+    expect(py.globals()).toContain('py');
+  });
+
   it('hasattr', function() {
     var A = function() {
       this.a = 100;

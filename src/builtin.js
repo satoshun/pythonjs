@@ -38,6 +38,13 @@
       if (hasOwnProperty.call(obj, key)) return obj[key];
       return obj[key] || defaultValue;
     },
+    globals: function() {
+      var props = [];
+      for (var key in root) {
+        if (hasOwnProperty.call(root, key)) props.push(key);
+      }
+      return props;
+    },
     hasattr: function(obj, key) {
       return hasOwnProperty.call(obj, key) || !!obj[key];
     }
