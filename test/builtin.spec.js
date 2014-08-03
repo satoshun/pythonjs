@@ -25,4 +25,9 @@ describe('global builtin test', function() {
     expect(false).toEqual(py.any([false, 0]));
     expect(false).toEqual(py.any([]));
   });
+
+  it('bool', function() {
+    expect(true).toEqual(py.bool(1));
+    expect(false).toEqual(py.bool(0));
+  });
 });

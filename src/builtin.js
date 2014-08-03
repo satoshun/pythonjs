@@ -17,6 +17,9 @@
         if (iterable[i]) return true;
       }
       return false;
+    },
+    bool: function(x) {
+      return !!x;
     }
   });
 }(this));
