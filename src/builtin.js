@@ -23,6 +23,7 @@
     },
     callable: function(x) {
       return typeof x === 'function';
-    }
+    },
+    chr: String.fromCharCode
   });
 }(this));

@@ -45,4 +45,10 @@ describe('global builtin test', function() {
     expect(false).toEqual(py.callable(1));
     expect(false).toEqual(py.callable(true));
   });
+
+  it('chr', function() {
+    expect('a').toEqual(py.chr(97));
+    expect('}').toEqual(py.chr(125));
+    expect('F').toEqual(py.chr(70));
+  });
 });
