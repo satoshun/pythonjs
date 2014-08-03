@@ -24,6 +24,13 @@
     callable: function(x) {
       return typeof x === 'function';
     },
-    chr: String.fromCharCode
+    chr: String.fromCharCode,
+    dir: function dir(obj) {
+      var props = [];
+      for (var key in obj) {
+        props.push(key);
+      }
+      return props;
+    }
   });
 }(this));

@@ -51,4 +51,18 @@ describe('global builtin test', function() {
     expect('}').toEqual(py.chr(125));
     expect('F').toEqual(py.chr(70));
   });
+
+  it('dir', function() {
+    var A = function() {
+      this.a = 100;
+      this.b = function() {};
+    };
+    var a = new A();
+    expect(py.dir(a)).toContain('a');
+    expect(py.dir(a)).toContain('b');
+    expect(py.dir(a)).not.toContain('c');
+
+    A.prototype.c = function() {};
+    expect(py.dir(a)).toContain('c');
+  });
 });
