@@ -65,4 +65,15 @@ describe('global builtin test', function() {
     A.prototype.c = function() {};
     expect(py.dir(a)).toContain('c');
   });
+
+  it('getattr', function() {
+    var A = function() {
+      this.a = 100;
+      this.b = undefined;
+    };
+    var a = new A();
+    expect(100).toEqual(py.getattr(a, 'a'));
+    expect(undefined).toEqual(py.getattr(a, 'b', 100));
+    expect(100).toEqual(py.getattr(a, 'c', 100));
+  });
 });

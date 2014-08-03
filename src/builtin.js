@@ -1,6 +1,8 @@
 (function(root, undefined) {
   'use strict';
 
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+
   root.py = root.py || {};
   _.extend(root.py, {
     abs: Math.abs,
@@ -31,6 +33,10 @@
         props.push(key);
       }
       return props;
+    },
+    getattr: function(obj, key, defaultValue) {
+      if (hasOwnProperty.call(obj, key)) return obj[key];
+      return defaultValue;
     }
   });
 }(this));
