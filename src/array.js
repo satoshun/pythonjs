@@ -1,18 +1,16 @@
-(function(root) {
+(function(root, undefined) {
   'use strict';
-  var
-    undef = void 0;
 
-  if (root.Array.prototype.filter === undef) {
+  if (root.Array.prototype.filter === undefined) {
     root.Array.prototype.filter = function(fun) {
-      if (this === undef || this === null) throw new TypeError();
+      if (this === undefined || this === null) throw new TypeError();
 
       var t = Object(this);
       var len = t.length >>> 0;
       if (typeof fun != 'function') throw new TypeError();
 
       var res = [],
-          thisArg = arguments.length >= 2 ? arguments[1] : undef;
+          thisArg = arguments.length >= 2 ? arguments[1] : undefined;
       for (var i = 0; i < len; i++) {
         if (i in t) {
           var val = t[i];

@@ -1,11 +1,9 @@
-(function(root) {
+(function(root, undefined) {
   'use strict';
-  var
-    undef = void 0;
 
   _.extend(root.String.prototype, {
     count: function count(key) {
-      if (key === undef) return 0;
+      if (key === undefined) return 0;
       return (this.match(new RegExp(key, 'g')) || []).length;
     },
     title: function title() {
@@ -20,7 +18,7 @@
     lstrip: function lstrip(chars) {
       var start = 0,
           length = this.length;
-      if (chars === undef) {
+      if (chars === undefined) {
         while (start < length && this.charAt(start) === ' ') start++;
       } else {
         while (start < length && chars.indexOf(this[start]) !== -1) start++;
@@ -30,7 +28,7 @@
     rstrip: function rstrip(chars) {
       var length = this.length,
           end = length - 1;
-      if (chars === undef) {
+      if (chars === undefined) {
         while (end >= 0 && this.charAt(end) === ' ') end--;
       } else {
         while (end >= 0 && chars.indexOf(this[end]) !== -1) end--;
@@ -43,7 +41,7 @@
     center: function center(length, char) {
       var r, l;
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       length -= this.length;
       r = l = Math.floor(length / 2);
       if (this.length % 2 === 0) r += (length % 2);
@@ -82,19 +80,19 @@
     },
     rjust: function rjust(length, char) {
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       return repeatString(char, length - this.length) + this;
     },
     ljust: function ljust(length, char) {
       if (this.length >= length) return this;
-      if (char === undef) char = ' ';
+      if (char === undefined) char = ' ';
       return this + repeatString(char, length - this.length);
     },
     rsplit: function rsplit(char, num) {
       var words, start = 0, end;
-      if (char === undef) char = '\n';
+      if (char === undefined) char = '\n';
       words = this.split(char);
-      if (num === undef || num >= words.length - 1) return words;
+      if (num === undefined || num >= words.length - 1) return words;
 
       end = words.length;
       num = end - num - 1;
@@ -105,9 +103,9 @@
     },
     lsplit: function lsplit(char, num) {
       var words, start = 0, end, length;
-      if (char === undef) char = '\n';
+      if (char === undefined) char = '\n';
       words = this.split(char);
-      if (num === undef || num >= words.length - 1) return words;
+      if (num === undefined || num >= words.length - 1) return words;
 
       end = length = words.length;
       num = length - num - 1;
