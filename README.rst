@@ -29,11 +29,11 @@ abs, all, any, bool, callable, chr, dir, getattr, globals, hasattr, isinstance, 
 development
 -----------
 
-```
-$ npm install
-$ npm test  # test
-$ npm build # update python.js 
-```
+::
+
+  $ npm install
+  $ npm test  # test
+  $ npm build # update python.js 
 
 
 License
