@@ -1,8 +1,8 @@
-pythonjs (python like function for javascript)
+pythonjs (implemented Python functions)
 ==============================================
 
-This is JavaScript like Python.
-String, Array object extend to a python functions.
+This is implemented Python functions.
+String, Array object extend a Python functions.
 
 implement methods
 -----------------
@@ -21,9 +21,13 @@ count, remove, extend
 builtin
 ~~~~~~~
 
-set py to window object.
+py set in Window object.
 
-abs, all, any, bool, callable, chr, dir, getattr, globals, hasattr, isinstance, min, max, range.
+py has under functions.
+
+::
+
+  abs, all, any, bool, callable, chr, dir, getattr, globals, hasattr, isinstance, min, max, range.
 
 for example
 
