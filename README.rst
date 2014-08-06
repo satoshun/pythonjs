@@ -25,6 +25,13 @@ set py to window object.
 
 abs, all, any, bool, callable, chr, dir, getattr, globals, hasattr, isinstance, min, max, range.
 
+for example
+
+::
+
+  console.log(py.all([1, false])); // false
+  console.log(py.any([1, false])); // true
+
 
 development
 -----------
