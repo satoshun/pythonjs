@@ -184,6 +184,18 @@
 (function(root, undefined) {
   'use strict';
 
+  function Match() {
+  }
+
+  _.extend(root.RegExp.prototype, {
+    search: function search(string, flags) {
+    }
+  });
+} (this));
+
+(function(root, undefined) {
+  'use strict';
+
   _.extend(root.String.prototype, {
     count: function count(key) {
       if (key === undefined) return 0;

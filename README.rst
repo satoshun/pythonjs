@@ -43,8 +43,8 @@ development
 ::
 
   $ npm install
-  $ npm test  # test
-  $ npm build # update python.js 
+  $ gulp test  # test
+  $ gulp build # update python.js 
 
 
 License
